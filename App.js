@@ -17,9 +17,10 @@ const PROCEDURES = [
   {
     id:"ultramist", label:"UltraMist", emoji:"🌊",
     cpt:"97610", color:C.teal, faint:C.tealFaint,
-    defaultAllowed:515, defaultCollRate:80,
+    defaultAllowed:466.58, defaultCollRate:80,
+    verified:true,
     fields:[
-      {key:"allowed",label:"Allowed per session",hint:"CPT 97610",default:515,step:5},
+      {key:"allowed",label:"Allowed per session",hint:"✅ 2026 CMS $466.58 verified",default:466.58,step:5},
       {key:"consumable",label:"Consumable cost",hint:"transducer + saline",default:18,step:1},
       {key:"txMins",label:"Treatment time (min)",hint:"avg per patient",default:28,step:1,notMoney:true},
     ],
@@ -32,9 +33,10 @@ const PROCEDURES = [
   {
     id:"prp", label:"PRP (G0465)", emoji:"💉",
     cpt:"G0465", color:C.red, faint:C.redFaint,
-    defaultAllowed:1050, defaultCollRate:80,
+    defaultAllowed:1245.09, defaultCollRate:80,
+    verified:true,
     fields:[
-      {key:"allowed",label:"Allowed per visit",hint:"G0465",default:1050,step:10},
+      {key:"allowed",label:"Allowed per visit",hint:"✅ 2026 CMS $1,245.09 verified",default:1245.09,step:10},
       {key:"consumable",label:"Consumable cost",hint:"centrifuge kit + supplies",default:45,step:5},
       {key:"txMins",label:"Procedure time (min)",hint:"incl. draw + centrifuge",default:45,step:1,notMoney:true},
     ],
@@ -47,11 +49,12 @@ const PROCEDURES = [
   {
     id:"skinsubXT", label:"PuraPly XT", emoji:"🩹",
     cpt:"Q4206", color:C.green, faint:C.greenFaint,
-    defaultAllowed:135, defaultCollRate:80,
+    verified:true,
+    defaultAllowed:127.14, defaultCollRate:80,
     fields:[
-      {key:"ratePerCm",label:"Rate per cm²",hint:"2026 flat rate",default:135,step:1},
+      {key:"ratePerCm",label:"Rate per cm²",hint:"✅ 2026 CMS flat rate — all skin subs",default:127.14,step:0.01},
       {key:"avgWoundCm",label:"Avg wound area (cm²)",hint:"L×W only",default:20,step:1,notMoney:true},
-      {key:"graftCost",label:"Graft acquisition cost",hint:"6×6 = ~$1,400",default:780,step:50},
+      {key:"graftCost",label:"Graft acquisition cost",hint:"⚠️ Key margin driver at $127/cm²",default:780,step:50},
       {key:"txMins",label:"Application time (min)",default:25,step:1,notMoney:true},
     ],
     calc:(f,coll)=>{
@@ -64,11 +67,12 @@ const PROCEDURES = [
   {
     id:"skinsubNS", label:"NuShield", emoji:"🧬",
     cpt:"Q4131", color:C.purple, faint:C.purpleFaint,
-    defaultAllowed:130, defaultCollRate:80,
+    verified:true,
+    defaultAllowed:127.14, defaultCollRate:80,
     fields:[
-      {key:"ratePerCm",label:"Rate per cm²",hint:"2026 flat rate",default:130,step:1},
+      {key:"ratePerCm",label:"Rate per cm²",hint:"✅ 2026 CMS flat rate — all skin subs",default:127.14,step:0.01},
       {key:"avgWoundCm",label:"Avg wound area (cm²)",hint:"L×W only",default:20,step:1,notMoney:true},
-      {key:"graftCost",label:"Graft acquisition cost",hint:"6×6 = ~$1,600",default:900,step:50},
+      {key:"graftCost",label:"Graft acquisition cost",hint:"⚠️ Key margin driver at $127/cm²",default:900,step:50},
       {key:"txMins",label:"Application time (min)",default:25,step:1,notMoney:true},
     ],
     calc:(f,coll)=>{
@@ -81,9 +85,10 @@ const PROCEDURES = [
   {
     id:"abi", label:"ABI / SmartABI", emoji:"🫀",
     cpt:"93922", color:C.blue, faint:C.blueFaint,
-    defaultAllowed:185, defaultCollRate:80,
+    defaultAllowed:96.87, defaultCollRate:80,
+    verified:true,
     fields:[
-      {key:"allowed",label:"Allowed per study",hint:"CPT 93922",default:185,step:5},
+      {key:"allowed",label:"Allowed per study",hint:"✅ 2026 CMS $96.87 global verified",default:96.87,step:5},
       {key:"consumable",label:"Consumable cost",hint:"leads, probe cover",default:8,step:1},
       {key:"txMins",label:"Study time (min)",default:20,step:1,notMoney:true},
     ],
@@ -96,10 +101,11 @@ const PROCEDURES = [
   {
     id:"debride", label:"Sharp Debridement", emoji:"🔪",
     cpt:"97597/98", color:C.gold, faint:C.goldFaint,
-    defaultAllowed:130, defaultCollRate:80,
+    defaultAllowed:116.40, defaultCollRate:80,
+    verified:true,
     fields:[
-      {key:"allowed",label:"Allowed (first 20 cm²)",hint:"CPT 97597",default:130,step:5},
-      {key:"addlAllowed",label:"Add'l per 20 cm²",hint:"CPT 97598",default:62,step:5},
+      {key:"allowed",label:"Allowed first 20 cm²",hint:"✅ 2026 CMS $116.40 verified",default:116.40,step:5},
+      {key:"addlAllowed",label:"Add'l per 20 cm²",hint:"✅ 2026 CMS $54.11",default:54.11,step:5},
       {key:"avgAddlUnits",label:"Avg add'l units billed",hint:"0 if most wounds < 20cm²",default:1,step:1,notMoney:true},
       {key:"consumable",label:"Consumable cost",hint:"scalpel, curette, dressing",default:12,step:1},
       {key:"txMins",label:"Procedure time (min)",default:20,step:1,notMoney:true},
@@ -114,9 +120,10 @@ const PROCEDURES = [
   {
     id:"lymph", label:"Lymphedema / LymphaScanner", emoji:"🧲",
     cpt:"93702", color:"#e879f9", faint:"#e879f912",
-    defaultAllowed:145, defaultCollRate:80,
+    defaultAllowed:156.16, defaultCollRate:80,
+    verified:true,
     fields:[
-      {key:"allowed",label:"Allowed per scan",hint:"CPT 93702",default:145,step:5},
+      {key:"allowed",label:"Allowed per scan",hint:"✅ 2026 CMS $156.16 verified",default:156.16,step:5},
       {key:"consumable",label:"Consumable cost",hint:"minimal",default:4,step:1},
       {key:"txMins",label:"Scan time (min)",default:15,step:1,notMoney:true},
     ],
@@ -127,11 +134,27 @@ const PROCEDURES = [
     }
   },
   {
-    id:"telehealth", label:"Telehealth Wound Consult", emoji:"💻",
+    id:"moleculight", label:"MolecuLight", emoji:"🔬",
+    cpt:"0598T", color:"#fb923c", faint:"#fb923c12",
+    defaultAllowed:175, defaultCollRate:80,
+    fields:[
+      {key:"allowed",label:"Allowed per session",hint:"⚠️ Est. Novitas JL ~$175 — verify",default:175,step:5},
+      {key:"addlSites",label:"Add'l sites (0599T)",hint:"×$119 each — add-on",default:0,step:1,notMoney:true},
+      {key:"consumable",label:"Consumable cost",hint:"DarkDrape per use",default:12,step:1},
+      {key:"txMins",label:"Imaging time (min)",hint:"~5 min bedside",default:8,step:1,notMoney:true},
+    ],
+    calc:(f,coll)=>{
+      const gross=f.allowed+(f.addlSites*119);
+      const net=gross*(coll/100);
+      return {net, gross, margin:net-f.consumable, costPerTx:f.consumable, txMins:f.txMins};
+    }
+  },
+  {
+    id:"telehealth",, label:"Telehealth Wound Consult", emoji:"💻",
     cpt:"99213-99214", color:"#34d399", faint:"#34d39912",
     defaultAllowed:70, defaultCollRate:80,
     fields:[
-      {key:"allowed",label:"Allowed per visit",hint:"99213~$65 / 99214~$80",default:70,step:5},
+      {key:"allowed",label:"Allowed per visit",hint:"99214=$135.60 / 99213=$92 non-fac",default:70,step:5},
       {key:"consumable",label:"Cost per visit",hint:"platform, overhead",default:5,step:1},
       {key:"txMins",label:"Visit time (min)",default:15,step:1,notMoney:true},
     ],
